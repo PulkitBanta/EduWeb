@@ -1,5 +1,5 @@
 <div class="container">
-    <form (submit)="changeRoute()" class="my-5">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="my-5">
         <div class="form-group">
             <input type="email" class="form-control" placeholder="Enter email" id="email" required autofocus>
         </div>
@@ -18,6 +18,6 @@
                <p>Do not have an account? <a class="badge badge-pill" routerLink="../signup">Signup</a></p> 
             </div>
         </div>
-        <button class="text-center" type="submit" class="btn btn-primary">Login</button>
+        <button class="text-center" class="btn btn-primary">Login</button>
     </form>
 </div>

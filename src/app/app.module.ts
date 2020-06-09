@@ -11,7 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { PlatformComponent } from './platform/platform.component';
 import { SessionComponent } from './session/session.component';
 import { DownloadsComponent } from './downloads/downloads.component';
-import { PerformanceComponent } from './performance/performance.component'
+import { PerformanceComponent } from './performance/performance.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { PerformanceComponent } from './performance/performance.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

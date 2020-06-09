@@ -4,9 +4,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav" *ngIf="isLoggedIn$">
             <li class="nav-item">
-                <a class="nav-link" routerLink="platform">Home</a>
+                <a class="nav-link" routerLink="">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="platform">Platform</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="platform/session">Sessions</a>
@@ -21,9 +25,9 @@
                 <a class="nav-link">About</a>
             </li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" *ngIf="!isLoggedIn$">
             <li class="nav-item">
-                <a class="nav-link" routerLink="../login">Login</a>
+                <a class="nav-link" routerLink="login">Login</a>
             </li>
         </ul>
     </div>
