@@ -1,4 +1,4 @@
-<h1 align="center">EduWeb</h1>
+<h1 align="center"><img src="src/assets/icon.png"></h1>
 
 EduWeb is an Open Source E-learning template based on Angular and Bootstrap.
 
