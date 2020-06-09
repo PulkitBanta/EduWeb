@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-session',
   templateUrl: './session.component.html',
   styleUrls: ['./session.component.css']
 })
-export class SessionComponent implements OnInit {
+export class SessionComponent {
+
+  show: number
 
   constructor() { }
 
-  ngOnInit(): void {
+  changeStandard(std) {
+    if(std === 11)
+      this.show = std;
+    else this.show = 12;
   }
-
 }

@@ -11,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { PlatformComponent } from './platform/platform.component';
 import { SessionComponent } from './session/session.component';
 import { DownloadsComponent } from './downloads/downloads.component';
-import { PerformanceComponent } from './performance/performance.component';
+import { PerformanceComponent } from './performance/performance.component'
 
 @NgModule({
   declarations: [
