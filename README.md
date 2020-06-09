@@ -39,16 +39,19 @@ $ npm start
 ## ScreenShots
 
 ![Landing Page](screenshots/landing.jpg "Landing Page")
+![Login](screenshots/login.png "Login")
+![After Login](screenshots/landing_login.jpg "Access to Features after Login")
 ![Platform](screenshots/platform.png "Platform")
 ![Empty Cart](screenshots/session.png "Session")
 ![Downloads](screenshots/downloads.png "Downloads")
-![Login](screenshots/login.png "Login")
 
 ## Features
 
 - Material design
 - Client side state management
 - Responsive design
+- Login feature
+- More Access to logged in users
 
 ## Built With
 
