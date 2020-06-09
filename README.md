@@ -1,27 +1,69 @@
-# EduWeb
+<h1 align="center">EduWeb</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
+EduWeb is an Open Source E-learning template based on Angular and Bootstrap.
 
-## Development server
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3e705d86-2364-4c2d-ae43-75bbb15acaaa/deploy-status)](https://app.netlify.com/sites/eduw/deploys)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+View Live -- [EduWeb](https://eduw.netlify.app/)
 
-## Code scaffolding
+## Getting Started 🚀
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Build
+You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+node@v10.16.0 or higher
+npm@6.9.0 or higher
+git@2.17.1 or higher
+```
 
-## Running unit tests
+## How To Use 🔧
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+From your command line, clone and run EduWeb:
 
-## Running end-to-end tests
+```bash
+# Clone this repository
+$ git clone https://github.com/PulkitBanta/EduWeb.git
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# Go into the repository
+$ cd EduWeb
 
-## Further help
+# Install dependencies
+$ npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#Start's development server
+$ npm start
+```
+
+## ScreenShots
+
+![Landing Page](screenshots/landing.jpg "Landing Page")
+![Platform](screenshots/platform.png "Platform")
+![Empty Cart](screenshots/session.png "Session")
+![Downloads](screenshots/downloads.png "Downloads")
+![Login](screenshots/login.png "Login")
+
+## Features
+
+- Material design
+- Client side state management
+- Responsive design
+
+## Built With
+
+- [Angular](https://angular.io/) - One framework. Mobile & desktop.
+- [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - A modern responsive front-end framework.
+
+## Contributing
+
+Currently not accepting any contributions.
+
+## Authors
+| [![Pulkit Banta](https://github.com/PulkitBanta.png?size=100)](https://github.com/PulkitBanta) |
+| --- |
+| [Pulkit Banta](https://github.com/PulkitBanta) |
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
