@@ -10,6 +10,8 @@ import { PlatformNavComponent } from './platform-nav/platform-nav.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { PlatformComponent } from './platform/platform.component';
+import { SessionComponent } from './session/session.component';
+import { DownloadsComponent } from './downloads/downloads.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PlatformComponent } from './platform/platform.component';
     PlatformNavComponent,
     SignupComponent,
     LoginComponent,
-    PlatformComponent
+    PlatformComponent,
+    SessionComponent,
+    DownloadsComponent
   ],
   imports: [
     BrowserModule,
