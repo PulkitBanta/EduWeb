@@ -1,41 +1,44 @@
-<div class="container p-5 size">
-    <h3 class="p-2 text-center">Select a class</h3>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card bg-light text-dark">
-                <button class="btn btn-light" (click)="changeStandard(11)">11th</button>
+<div class="container">
+    <div class="size bg-info p-3">
+        <h3 class="p-2 text-center text-white">Select a class</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card bg-light text-dark">
+                    <button class="btn btn-light" (click)="changeStandard(11)">11th</button>
+                </div>
+                <div *ngIf="show == 11">
+                    <ul class="list-group">
+                        <li class="list-group-item">Physical World and Measurement</li>
+                        <li class="list-group-item">Kinematics</li>
+                        <li class="list-group-item">Laws of Motion </li>
+                        <li class="list-group-item">Work, Energy and Power</li>
+                        <li class="list-group-item">Gravitation</li>
+                        <li class="list-group-item">Properties of Bulk Matter</li>
+                        <li class="list-group-item">Thermodynamics</li>
+                        <li class="list-group-item">Kinetic Theory of Gases</li>
+                        <li class="list-group-item">Oscillation & Waves</li>
+                    </ul>
+                </div>
             </div>
-            <div *ngIf="show == 11">
-                <ul class="list-group">
-                    <li class="list-group-item">Physical World and Measurement</li>
-                    <li class="list-group-item">Kinematics</li>
-                    <li class="list-group-item">Laws of Motion  </li>
-                    <li class="list-group-item">Work, Energy and Power</li>
-                    <li class="list-group-item">Gravitation</li>
-                    <li class="list-group-item">Properties of Bulk Matter</li>
-                    <li class="list-group-item">Thermodynamics</li>
-                    <li class="list-group-item">Kinetic Theory of Gases</li>
-                    <li class="list-group-item">Oscillation & Waves</li>
-                  </ul>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card bg-light text-dark">
-                <button class="btn btn-light" (click)="changeStandard(12)">12th</button>
-            </div>
-            <div *ngIf="show == 12">
-                <ul class="list-group">
-                    <li class="list-group-item">Electrostatics</li>
-                    <li class="list-group-item">Current Electricity</li>
-                    <li class="list-group-item">Magnetic Effects of Current and Magnetism</li>
-                    <li class="list-group-item">Electromagnetic Induction and Alternating Currents</li>
-                    <li class="list-group-item">Electromagnetic Waves</li>
-                    <li class="list-group-item">Optics</li>
-                    <li class="list-group-item">Dual Nature of Radiation and Matter</li>
-                    <li class="list-group-item">Atoms and Nuclei</li>
-                    <li class="list-group-item">Electronic Devices</li>
-                  </ul>
+            <div class="col-md-6">
+                <div class="card bg-light text-dark">
+                    <button class="btn btn-light" (click)="changeStandard(12)">12th</button>
+                </div>
+                <div *ngIf="show == 12">
+                    <ul class="list-group">
+                        <li class="list-group-item">Electrostatics</li>
+                        <li class="list-group-item">Current Electricity</li>
+                        <li class="list-group-item">Magnetic Effects of Current and Magnetism</li>
+                        <li class="list-group-item">Electromagnetic Induction and Alternating Currents</li>
+                        <li class="list-group-item">Electromagnetic Waves</li>
+                        <li class="list-group-item">Optics</li>
+                        <li class="list-group-item">Dual Nature of Radiation and Matter</li>
+                        <li class="list-group-item">Atoms and Nuclei</li>
+                        <li class="list-group-item">Electronic Devices</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+    <app-performance></app-performance>
 </div>
