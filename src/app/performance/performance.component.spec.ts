@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlatformNavComponent } from './platform-nav.component';
+import { PerformanceComponent } from './performance.component';
 
-describe('PlatformNavComponent', () => {
-  let component: PlatformNavComponent;
-  let fixture: ComponentFixture<PlatformNavComponent>;
+describe('PerformanceComponent', () => {
+  let component: PerformanceComponent;
+  let fixture: ComponentFixture<PerformanceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlatformNavComponent ]
+      declarations: [ PerformanceComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlatformNavComponent);
+    fixture = TestBed.createComponent(PerformanceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
