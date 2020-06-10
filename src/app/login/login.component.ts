@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthenticationService,
     private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void { 
@@ -27,6 +29,7 @@ export class LoginComponent implements OnInit {
    onSubmit() {
     this.auth.authenticate();
     this.login = true;
+    this.router.navigate(['../platform'])
   }
 
 }
