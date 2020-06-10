@@ -11,7 +11,6 @@ import { Router } from '@angular/router'
 export class LoginComponent implements OnInit {
   
   form: FormGroup
-  login = false
 
   constructor(
     private auth: AuthenticationService,
@@ -28,7 +27,6 @@ export class LoginComponent implements OnInit {
 
    onSubmit() {
     this.auth.authenticate();
-    this.login = true;
     this.router.navigate(['../platform'])
   }
 
