@@ -62,10 +62,12 @@ $ npm start
 
 Currently not accepting any contributions.
 
-## Authors
+## Contributors
+
 | [![Pulkit Banta](https://github.com/PulkitBanta.png?size=100)](https://github.com/PulkitBanta) |
 | --- |
 | [Pulkit Banta](https://github.com/PulkitBanta) |
+| <p align="center"><a title="code">💻</a> <a title="designing">🎨</a> <a title="documentation">📖</a></p>
 
 ## License
 
