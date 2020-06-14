@@ -1,6 +1,6 @@
 <h1 align="center"><img src="src/assets/icon.png"></h1>
 
-EduWeb is an Open Source E-learning template based on Angular and Bootstrap.
+An online website template which login the user and then shows the various courses provided to the user to select and then pursue the same.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3e705d86-2364-4c2d-ae43-75bbb15acaaa/deploy-status)](https://app.netlify.com/sites/eduw/deploys)
 
