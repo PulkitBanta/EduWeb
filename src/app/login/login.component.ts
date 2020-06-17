@@ -9,8 +9,9 @@ import { Router } from '@angular/router'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  form: FormGroup
+
+  loginForm: FormGroup
+  bool = true
 
   constructor(
     private auth: AuthenticationService,
@@ -18,16 +19,21 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void { 
-    this.form = this.fb.group({
-      userName: ['', Validators.required],
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
-   }
+  }
 
-   onSubmit() {
-    this.auth.authenticate();
-    this.router.navigate(['../platform'])
+  onSubmit() {
+    if (this.loginForm.value.email && this.loginForm.value.password) {
+      this.bool = true;
+      this.auth.authenticate();
+      this.router.navigate(['../platform'])
+    } else {
+      this.bool = false;
+    }
   }
 
 }
