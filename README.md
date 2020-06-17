@@ -50,7 +50,7 @@ $ npm start
 - Material design
 - Client side state management
 - Responsive design
-- Login feature
+- Login and Signup feature
 - More Access to logged in users
 
 ## Built With
