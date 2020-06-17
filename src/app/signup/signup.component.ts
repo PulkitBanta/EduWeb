@@ -8,22 +8,30 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  form: FormGroup
+  signupForm: FormGroup
   signup = false
+  bool = true
 
   constructor(
     private fb: FormBuilder,
   ) { }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      userName: ['', Validators.required],
-      password: ['', Validators.required]
+    this.signupForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required]
     });
   }
 
-  onSubmit() { 
-    this.signup = true
+  onSubmit() {
+    if (this.signupForm.value.email && this.signupForm.value.password && this.signupForm.value.confirmPassword && (this.signupForm.value.password === this.signupForm.value.confirmPassword)) {
+      this.signup = true
+      this.bool = true
+    } else {
+      this.bool = false
+      this.signup = false
+    }
   }
 
 }

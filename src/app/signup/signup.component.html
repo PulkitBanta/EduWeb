@@ -1,23 +1,29 @@
 <div class="container">
-    <div class="alert alert-success alert-dismissible fade show my-3" *ngIf="signup" role="alert">
-        You have successfully Registered
+    <div class="alert alert-warning alert-dismissible fade show m-3" role="alert" [hidden]='bool'>
+        Do not leave any field empty, passwords should match.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="my-5">
+    <div class="alert alert-success alert-dismissible fade show m-3" role="alert" [hidden]='!signup'>
+        You have signed up successfully.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="my-5">
         <div class="form-group">
-            <input type="email" class="form-control" placeholder="Enter email" id="email" required autofocus>
+            <input type="email" class="form-control" placeholder="Enter email" id="email" formControlName="email" required autofocus>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Enter password" id="pwd" required>
+                    <input type="password" class="form-control" placeholder="Enter password" id="pwd" formControlName="password" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Confirm password" id="pwd" required>
+                    <input type="password" class="form-control" placeholder="Confirm password" id="pwd" formControlName="confirmPassword" required>
                 </div>
             </div>
         </div>
@@ -25,7 +31,7 @@
             <div class="col-md-6">
                 <div class="form-group form-check">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox"> Agree <strong>Terms and Conditions*</strong>
+                        <input class="form-check-input" type="checkbox" required> Agree <strong>Terms and Conditions*</strong>
                     </label>
                 </div>
             </div>
