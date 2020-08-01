@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup
   bool = true
+  login = false
 
   constructor(
     private auth: AuthenticationService,
@@ -29,10 +30,14 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.value.email && this.loginForm.value.password) {
       this.bool = true;
+      this.login = true;
       this.auth.authenticate();
-      this.router.navigate(['../platform'])
+      setTimeout(() => {
+        this.router.navigateByUrl('/platform')
+      }, 500);
     } else {
       this.bool = false;
+      this.login = false
     }
   }
 

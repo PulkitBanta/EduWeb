@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { isNull } from 'util';
 
 @Component({
   selector: 'app-signup',
