@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
+import { FormValidationService } from '../form-validation.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthenticationService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private fvService: FormValidationService
   ) { }
 
   ngOnInit(): void {
@@ -28,7 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.validateEmail() && this.validatePassword()) {
+    if (this.fvService.validateEmail(this.loginForm.get('email').value) && this.fvService.validatePassword(this.loginForm.get('password').value)) {
       this.login = true;
       this.bool = this.login;
 
@@ -43,20 +45,6 @@ export class LoginComponent implements OnInit {
       this.bool = false;
       this.login = false
     }
-  }
-
-  validateEmail() {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.loginForm.get('email').value)) {
-      return true
-    }
-    return false
-  }
-
-  validatePassword() {
-    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(this.loginForm.get('password').value)) {
-      return true
-    }
-    return false
   }
 
 }

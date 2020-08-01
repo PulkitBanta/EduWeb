@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormValidationService } from '../form-validation.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,6 +16,7 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private fvService: FormValidationService
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +29,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.signupForm.value.email && this.signupForm.value.password && this.signupForm.value.confirmPassword && (this.signupForm.value.password === this.signupForm.value.confirmPassword) && this.signupForm.value.terms) {
+    if (this.fvService.validateEmail(this.signupForm.get('email').value) && this.fvService.validatePassword(this.signupForm.get('password').value) && (this.signupForm.value.password === this.signupForm.value.confirmPassword) && this.signupForm.value.terms) {
       this.signup = true
       this.bool = true
     } else {
