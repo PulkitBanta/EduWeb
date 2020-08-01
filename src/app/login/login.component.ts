@@ -28,17 +28,35 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.loginForm.value.email && this.loginForm.value.password) {
-      this.bool = true;
+    if (this.validateEmail() && this.validatePassword()) {
       this.login = true;
-      this.auth.authenticate();
-      setTimeout(() => {
-        this.router.navigateByUrl('/platform')
-      }, 500);
+      this.bool = this.login;
+
+      if(this.login) {
+        this.auth.authenticate();
+        setTimeout(() => {
+          this.router.navigateByUrl('/platform')
+        }, 500);
+      }
+
     } else {
       this.bool = false;
       this.login = false
     }
+  }
+
+  validateEmail() {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.loginForm.get('email').value)) {
+      return true
+    }
+    return false
+  }
+
+  validatePassword() {
+    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(this.loginForm.get('password').value)) {
+      return true
+    }
+    return false
   }
 
 }
