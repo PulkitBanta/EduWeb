@@ -6,14 +6,15 @@ import { SignupComponent } from './signup/signup.component';
 import { PlatformComponent } from './platform/platform.component';
 import { SessionComponent } from './session/session.component';
 import { DownloadsComponent } from './downloads/downloads.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'platform', component: PlatformComponent },
-  { path: 'platform/session', component: SessionComponent },
-  { path: 'platform/download', component: DownloadsComponent }
+  { path: 'platform', component: PlatformComponent, canActivate: [AuthGuard] },
+  { path: 'platform/session', component: SessionComponent, canActivate: [AuthGuard] },
+  { path: 'platform/download', component: DownloadsComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

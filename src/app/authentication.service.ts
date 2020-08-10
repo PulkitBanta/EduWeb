@@ -16,7 +16,7 @@ export class AuthenticationService {
     return this.authenticated$.asObservable();
   }
 
-  public deauthenticate() {
+  deauthenticate() {
     this.authenticated$.next(false);
   }
 }
