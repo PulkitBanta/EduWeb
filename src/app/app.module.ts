@@ -30,7 +30,7 @@ import { HomeComponent } from './home/home.component';
     PerformanceComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ReactiveFormsModule,
     FontAwesomeModule
