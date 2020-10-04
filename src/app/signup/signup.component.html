@@ -14,18 +14,19 @@
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="my-5">
         <div class="form-group">
             <input type="email" class="form-control" placeholder="Enter email" id="email" formControlName="email" autofocus>
-            <small id="emailHelp" class="form-text text-muted">Example email: abc@gmail.com</small>
+            <small id="emailHelp" class="form-text text-danger" *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched">Example email: abc@gmail.com</small>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Enter password" id="pwd" formControlName="password">
-                    <small id="emailHelp" class="form-text text-muted">Password must contain: one upercase, one lowercase letter and between 6 to 20 characters.</small>
+                    <small id="pwdHelp" class="form-text text-danger" *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched">Password must contain: one upercase, one lowercase letter and between 6 to 20 characters.</small>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Confirm password" id="pwd" formControlName="confirmPassword">
+                    <small id="confirmPwdHelp" class="form-text text-danger" *ngIf="signupForm.get('confirmPassword').invalid && signupForm.get('confirmPassword').touched">Confirm the password.</small>
                 </div>
             </div>
         </div>

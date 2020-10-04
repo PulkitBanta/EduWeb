@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { FormValidationService } from '../form-validation.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,16 +11,14 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup
   signup = false
   bool = true
-  errorText = ""
 
   constructor(
-    private fb: FormBuilder,
-    private fvService: FormValidationService
+    private fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.signupForm = this.fb.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
       terms: [false, Validators.required]
@@ -29,13 +26,19 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.fvService.validateEmail(this.signupForm.get('email').value) && this.fvService.validatePassword(this.signupForm.get('password').value) && (this.signupForm.value.password === this.signupForm.value.confirmPassword) && this.signupForm.value.terms) {
-      this.signup = true
-      this.bool = true
+    if(this.signupForm.valid) {
+      this.valid();
     } else {
-      this.bool = false
-      this.signup = false
+      this.invalid();
     }
+  }
+
+  valid() {
+    this.signup = this.bool = true;
+  }
+
+  invalid() {
+    this.signup = this.bool = false;
   }
 
 }
