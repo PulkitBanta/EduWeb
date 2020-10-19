@@ -9,8 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit {
 
   signupForm: FormGroup
-  signup = false
-  bool = true
+  signupSuccess = false
 
   constructor(
     private fb: FormBuilder
@@ -21,7 +20,7 @@ export class SignupComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-      terms: [false, Validators.required]
+      terms: [true, Validators.required]
     });
   }
 
@@ -34,11 +33,11 @@ export class SignupComponent implements OnInit {
   }
 
   valid() {
-    this.signup = this.bool = true;
+    this.signupSuccess = true;
   }
 
   invalid() {
-    this.signup = this.bool = false;
+    this.signupSuccess = false;
   }
 
 }

@@ -11,12 +11,7 @@ import { Router } from '@angular/router'
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup
-
-  // if true, then no error is there
-  bool = true
-
-  // if true, then login is succesful
-  login = false
+  loginSuccess = false
 
   constructor(
     private auth: AuthenticationService,
@@ -33,26 +28,23 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     // if form is vaild, then login else show error
-    if(this.loginForm.valid){
+    if (this.loginForm.valid) {
       this.valid();
-
-      if(this.login) {
-        this.auth.authenticate();
-        setTimeout(() => {
-          this.router.navigateByUrl('/platform')
-        }, 500);
-      }
+      this.auth.authenticate();
+      setTimeout(() => {
+        this.router.navigateByUrl('/platform')
+      }, 500);
     } else {
       this.invalid();
     }
   }
 
   valid() {
-    this.login = this.bool = true;
+    this.loginSuccess = true;
   }
 
   invalid() {
-    this.login = this.bool = false;
+    this.loginSuccess = false;
   }
 
 }
