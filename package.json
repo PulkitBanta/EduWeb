@@ -29,7 +29,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@nguniversal/express-engine": "^9.1.1",
     "bootstrap": "^4.5.3",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "jquery": "^3.5.1",
     "rxjs": "~6.5.5",
     "tslib": "^1.14.1",
